@@ -1,4 +1,4 @@
-﻿namespace Keystroke.API.CallbackObjects
+namespace Keystroke.API.CallbackObjects
 {
     public class KeyPressed
     {
@@ -110,6 +110,19 @@
                 if (KeyCode == KeyCode.Oem7) return "~";
             }
 
+            if (KeyboardLayout == "fi-FI")
+            {
+                if (KeyCode == KeyCode.Decimal) return ".";
+                if (KeyCode == KeyCode.Oem1) return "ö";
+                if (KeyCode == KeyCode.Oem2) return "-";
+                if (KeyCode == KeyCode.Oem3) return "§";
+                if (KeyCode == KeyCode.Oem4) return "å";
+                if (KeyCode == KeyCode.Oem5) return "'";
+                if (KeyCode == KeyCode.Oem6) return "¨";
+                if (KeyCode == KeyCode.Oem7) return "ä";
+                if (KeyCode == KeyCode.Oem102) return "<";
+            }
+
             //EN-US
             if (KeyCode == KeyCode.Decimal) return ".";
             if (KeyCode == KeyCode.Oem1) return ";";
@@ -171,6 +184,35 @@
 
         private string ShiftCharacterIfItIsShiftable(string character)
         {
+            if (KeyboardLayout == "fi-FI")
+            {
+                if (KeyCode == KeyCode.D1) return "!";
+                if (KeyCode == KeyCode.D2) return "\"";
+                if (KeyCode == KeyCode.D3) return "#";
+                if (KeyCode == KeyCode.D4) return "¤";
+                if (KeyCode == KeyCode.D5) return "%";
+                if (KeyCode == KeyCode.D6) return "&";
+                if (KeyCode == KeyCode.D7) return "/";
+                if (KeyCode == KeyCode.D8) return "(";
+                if (KeyCode == KeyCode.D9) return ")";
+                if (KeyCode == KeyCode.D0) return "=";
+                if (KeyCode == KeyCode.Oemcomma) return ";";
+                if (KeyCode == KeyCode.OemMinus) return "_";
+                if (KeyCode == KeyCode.OemPeriod) return ":";
+                if (KeyCode == KeyCode.Oemplus) return "?";
+                if (KeyCode == KeyCode.LatinKeyboardBar) return "?";
+
+                if (KeyCode == KeyCode.Decimal) return ".";
+                if (KeyCode == KeyCode.Oem1) return "`";
+                if (KeyCode == KeyCode.Oem2) return "_";
+                if (KeyCode == KeyCode.Oem3) return "Ö";
+                if (KeyCode == KeyCode.Oem4) return "`";
+                if (KeyCode == KeyCode.Oem5) return "'";
+                if (KeyCode == KeyCode.Oem6) return "Å";
+                if (KeyCode == KeyCode.Oem7) return "Ä";
+                if (KeyCode == KeyCode.Oem102) return ">";
+            }
+
             if (KeyCode == KeyCode.D1) return "!";
             if (KeyCode == KeyCode.D2) return "@";
             if (KeyCode == KeyCode.D3) return "#";
